@@ -20,7 +20,7 @@ app.get("/",(req,res)=>{
   })
 })
 
-app.get('/products',(req,res)=>{
+/* app.get('/products',(req,res)=>{
   db.any("select * from products") //เรียกข้อมูลทั้งหมดของตารางสินค้า
     .then((data1) => {
       myProduct = data1;
@@ -120,35 +120,9 @@ app.post('/auth/login', (req, res) => {
   
   
 
-  /* try {
-    // ดึงข้อมูลจาก body ของ request
-    const username = req.body.username;
-    const password = req.body.password;
-    
-    // ค้นหาข้อมูลผู้ใช้จากฐานข้อมูล
-    db.any(`SELECT * FROM users` )
-    .then((data_user)=>{
-      for (const users of data_user) {
-            // เปรียบเทียบรหัสผ่าน
-            const passwordMatch =  bcrypt.compare(password, users.userpass);
-            
-            // ถ้ารหัสผ่านตรงกัน
-            if (passwordMatch) {
-              res.redirect('/products'); 
-              return;
-            }
-          }
-          // ถ้าไม่มีรหัสผ่านที่ตรงกัน
-          res.status(401).send('รหัสผ่านไม่ถูกต้อง');
-    }).catch((error)=>{
-      res.status(500).send('ชื่อผู้ใช้ไม่ถูกต้อง' + error);
-    })
-    // ลูปผ่านผู้ใช้ทั้งหมดที่พบ (น่าจะมีเพียงผู้ใช้เดียว)
-  } catch (error) {
-    res.status(500).send('errorตั้งแต่ยังไม่เข้าฐานข้อมูล ' + error);
-  } */
+  
 
-});
+}); */
 
 // ...
 
