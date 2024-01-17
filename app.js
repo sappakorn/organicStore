@@ -20,7 +20,7 @@ app.get("/",(req,res)=>{
   })
 })
 
-/* app.get('/products',(req,res)=>{
+app.get('/products',(req,res)=>{
   db.any("select * from products") //เรียกข้อมูลทั้งหมดของตารางสินค้า
     .then((data1) => {
       myProduct = data1;
@@ -122,7 +122,7 @@ app.post('/auth/login', (req, res) => {
 
   
 
-}); */
+});
 
 // ...
 
