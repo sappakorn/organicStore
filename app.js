@@ -1,10 +1,31 @@
-const express = require("express");
-/* const { create, result } = require("lodash"); */
+const express = require('express')
 const app = express();
 const port = 3020;
-const pgp = require("pg-promise")();
-const db = pgp("postgres://webadmin:CANhfo43324@10.104.13.219:5432/myDB"); //เชื่อมต่อฐานข้อมูล
-const bodyParser = require('body-parser');
+const pgp = require('pg-promise')();
+const { Pool } = require('pg');
+
+// กำหนดค่าการเชื่อมต่อฐานข้อมูล
+const pool = new Pool({
+  user: 'webadmin',
+  password: 'RNAogz66345',
+  host: '10.104.13.219',
+  port: 5432,
+  database: 'organicStore'
+});
+
+// ใช้ pool connection
+pool.query('SELECT * FROM your_table')
+  .then((result) => {
+    console.log(result.rows);
+  })
+  .catch((error) => {
+    console.error('Error executing query', error);
+  })
+  .finally(() => {
+    // คืน pool connection หลังจากใช้เสร็จ
+    pool.end();
+  });
+  const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const { errors } = require("pg-promise");
 const flash = require('connect-flash');
@@ -123,22 +144,3 @@ app.post('/auth/login', (req, res) => {
   
 
 });
-
-// ...
-
-// ...
-
-
-/* productRouter.route("/").get((req,res)=>{
-  db.any("select * from products")
-    .then((data1) => {
-      res.render('products', { data1: data1 });
-    })
-    .catch((error1) => {
-      return res.status(400).json(error1);
-    });
-}); */
-
-/* 
-app.use("/products", productRouter) */
-

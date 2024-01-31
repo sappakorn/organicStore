@@ -1,5 +1,5 @@
 {
-  "name": "project",
+  "name": "organicstore",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,10 +7,18 @@
     "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sappakorn/organicStore.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sappakorn/organicStore/issues"
+  },
+  "homepage": "https://github.com/sappakorn/organicStore#readme",
   "dependencies": {
-    "bcrypt": "^5.0.1",
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "bootstrap": "^5.3.2",
     "connect-flash": "^0.1.1",
